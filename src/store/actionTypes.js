@@ -1,0 +1,1 @@
+export const CHANG_SEARCH_FOCUS = 'CHANG_SEARCH_FOCUS'
