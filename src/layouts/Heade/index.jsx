@@ -2,10 +2,9 @@ import React,{ PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { Link } from "react-router-dom"
 // component required static or status
-import { createHeadeInputFocusAction } from './../../store/actionCreators.js'
+import { createHeadeInputFocusAction, changeModalIsEnterAction } from './../../store/actionCreators.js'
 import logo from './../../assets/images/logo.jpg'
-import { HeadeWrpper, LogoContainer, LogoImg, NavbarLeft } from './styles.js'
-import Store from './../../store/index.js'
+import { HeadeWrapper, LogoContainer, LogoImg, NavbarLeft } from './styles.js'
 // Component import
 import HotSearchKeyword from './../../components/HotSearchKeyword/index.jsx'
 import Navbar from './../Navbar/Navbar.jsx'
@@ -17,9 +16,7 @@ class Heade extends PureComponent {
 		super(props)
 		this.state = {
 			renderError: false,
-			navs: [
-
-			],
+			navs: [],
 			search: {
 				inputValue: ''
 			},
@@ -28,6 +25,15 @@ class Heade extends PureComponent {
 		// 函数this绑定
 		this._changeInputValue = this._changeInputValue.bind(this)
 		this._switchHotKeyword = this._switchHotKeyword.bind(this)
+		this._modlaEnter = this._modlaEnter.bind(this)
+		this._modalLeave = this._modalLeave.bind(this)
+	}
+	_modlaEnter () {
+		this.props.changeModalEnter(true)
+	}
+	_modalLeave () {
+		console.log(1)
+		this.props.changeModalEnter(false)
 	}
 	// 更新输入框的值
 	_changeInputValue (event) {
@@ -52,23 +58,26 @@ class Heade extends PureComponent {
 	render () {
 		const {  hotkeyWords } = this.state
 		const { inputValue} = this.state.search
-		const { isFocus } = this.props
-		return (<HeadeWrpper className={ ['heade-container', 'clearfix', 'kid_f_l'] } >
+		const { isFocus, isEnter } = this.props
+		return (<HeadeWrapper className={ ['heade-container', 'clearfix', 'kid_f_l'] } >
 				<LogoContainer>
 					<Link to={  '/' } className={ ['con-block'] } >
 						<LogoImg src={ logo } alt={ logo } /> 
 					</Link>
 				</LogoContainer>
-				<MainContainer>
+				<MainContainer type="heade">
 					<Navbar></Navbar>
 					<NavbarSearch  
 						isFocus={ isFocus }
+						isEnter={ isEnter }
 						inputValue={ inputValue }
 						getMangeFocus={ this.props.changHeadeIsFocus  }
 						changeInputValue={ this._changeInputValue }
 						HotSearchKeyword={ HotSearchKeyword  }
 						hotkeyWords={  hotkeyWords }
 						switchHotKeyword={ this._switchHotKeyword  }
+						modalEnter={ this._modlaEnter }
+						modalLeave={ this._modalLeave }
 					></NavbarSearch>
 				</MainContainer>
 				<NavbarLeft className="f_r kid_f_r  clearfix">
@@ -86,7 +95,7 @@ class Heade extends PureComponent {
 						</button>
 					</div>
 				</NavbarLeft>
-			</HeadeWrpper>)
+			</HeadeWrapper>)
 	}
 	componentDidMount () {
 
@@ -110,7 +119,8 @@ class Heade extends PureComponent {
 // store mapProps
 const mapStatetoProps = (state) => {
 	return {
-		isFocus: state.get('heade').get('isFocus')
+		isFocus: state.get('heade').get('isFocus'),
+		isEnter: state.get('heade').get('isEnter')
 	}
 }
 const mapDispatchToProps = (_dispatch) => {
@@ -119,7 +129,11 @@ const mapDispatchToProps = (_dispatch) => {
 				// 判断是否是获取焦点
 			const focusEle = document.activeElement
 			const isFocus = focusEle === event.target
-			Store.dispatch( createHeadeInputFocusAction(isFocus)) 
+			_dispatch( createHeadeInputFocusAction(isFocus)) 
+		},
+		changeModalEnter (isEnter) {
+			// 进行改变进行参数
+			_dispatch(changeModalIsEnterAction(isEnter))
 		}
 	}
 }

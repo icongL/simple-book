@@ -1,0 +1,57 @@
+.brand-wrapper {
+  margin-bottom: 30px;
+  padding: 10px 22px;
+  display: block;
+  width: 100%;
+  position: relative;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  background-color: #fff;
+  font-size: 0px;
+  box-sizing: border-box;
+  .download-info {
+  	float: right;
+    font-size: 15px;
+    color: #333;
+    vertical-align: middle;
+    margin-top: 5px;
+    margin-left: 7px;
+    > p {
+      margin-top: 4px;
+      font-size: 13px;
+      color: #999;
+    }
+  }
+  .left-mimi {
+    float: left;
+    width: 60px;
+    height: 60px;
+  }
+  .fix-picture {
+    position: absolute;
+    top: -180px;
+    width: 140px;
+    transition: all 0.5s linear-out 0s;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    height: 140px;
+    > .code-triangle {
+      width: 0px;
+      height: 0px;
+      position: absolute;
+      left: 50%;
+      bottom: -10px;
+      margin-left: -5px;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent; 
+      border-top: 10px solid #ccc;
+    } 
+    img {
+      width: 100%;
+    }
+    &.hidden {
+      display: none;
+    }
+  }
+}

@@ -13,6 +13,13 @@
       "unicode_decimal": 58902
     },
     {
+      "icon_id": "736200",
+      "name": "爱心",
+      "font_class": "icon4",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
       "icon_id": "1027198",
       "name": "预览-旋转",
       "font_class": "yulanxuanzhuan",
@@ -32,6 +39,13 @@
       "font_class": "diamonds",
       "unicode": "e62b",
       "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "9097755",
+      "name": "ic_backtop",
+      "font_class": "ic_backtop",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
     }
   ]
 }

@@ -1,10 +1,15 @@
 import styled from 'styled-components'
-export const MainWrpper = styled.div`
-	width: 880px;
-	top: 0;
+export const MainWrapper = styled.div`
 	margin: 0px auto;
 	text-align: center;
-	position: absolute;
-	left: 50%;
-	margin-left: -440px;
+	&.heade-main {
+		width: 880px;
+		top: 0;
+		left: 50%;
+		margin-left: -440px;
+		position: absolute;
+	}
+	&.main-container {
+		width: 960px;
+	}
 `

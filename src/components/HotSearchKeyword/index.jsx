@@ -3,11 +3,15 @@ import { HotSearchContainer } from './styled.js'
 import propTypes from 'prop-types'
 import Tag from './../tag/index.jsx'
 const HotSearchKeyword = (props) => {
-	const { isShow, hotkeyWords } = props
+	const { isShow, hotkeyWords, modalEnter, modalLeave   } = props
 	const hotTag = hotkeyWords.map((item, index) => {
 		return <Tag key={ item.inner } item={ item } />
 	})
-	return <HotSearchContainer className={ `${ isShow } clearfix` }>
+	return <HotSearchContainer 
+		 className={ `${ isShow } clearfix` }
+		 onMouseEnter={ modalEnter }
+		 onMouseLeave={ modalLeave }
+		 >
 		<div className="hot-search-title clearfix">
 			<span>热门搜索</span>
 			<button type="button" onClick={ props.switchHotKeyword }>

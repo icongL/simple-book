@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const HeadeWrpper = styled.div`
+export const HeadeWrapper = styled.div`
 	height: 56px;
 	position: relative;
 	text-align: center;
