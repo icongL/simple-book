@@ -37,34 +37,7 @@ export const ArticleItemWrapper = Styled.li`
 	    line-height: 24px;
 	    color: #999;
 		}
-		.article-operation {
-			padding-right: 0!important;
-	    font-weight: 400;
-	    line-height: 20px;
-	    > * {
-	    	font-size: 12px;
-  	    margin-right: 10px;
-	    }
-	    .diamond {
-	    	display: inline-block;
-	    	transform: scale(0.8);
-	    	color: #ea6f5a !important;
-	    	span {
-	    		margin-left: 3px;
-	    		transform: scale(1.2);
-	    	}
-	    }
-	    .categoryTitle {
-	    	color: #b4b4b4;
-	    }
-	    .categoryTitle:hover {
-  	    color: #787878;
-	    }
-	    .star {
-	    	margin-right: 10px;
-    		color: #b4b4b4;
-	    }
-		}
+		
 	}
 	.photo {
 		

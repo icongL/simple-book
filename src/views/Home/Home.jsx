@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
-import MainContent from './../../layouts/MainContent/index.js'
+import MainContent from './../../layouts/HomeMainContent'
 import Heade from './../../layouts/Heade/index.jsx'
 import Foot from './../../layouts/Foot/Foot.jsx'
 import BackTop from './../../components/ClickBackTop/index.jsx'
@@ -111,15 +111,16 @@ class Home extends PureComponent {
     if (this.isScrollOver !== null || scrollHeight <= 0) {
       return false
     }
-    this.isScrollOver = setInterval(() => {
-      scrollHeight = scrollHeight - 50
-      if (scrollHeight <= 0) {
-        clearInterval(this.isScrollOver)
-        this.isScrollOver = null
-      } else {
-        window.scrollTo(0, scrollHeight)
+    // 执行向上跳转动画tyarn
+    //yarn
+    ;(function smoothscroll() {
+      var currentScroll =
+        document.documentElement.scrollTop || document.body.scrollTop
+      if (currentScroll > 0) {
+        window.requestAnimationFrame(smoothscroll)
+        window.scrollTo(0, currentScroll - currentScroll / 5)
       }
-    }, 50)
+    })()
   }
   render() {
     const { menus, downloadImgIsShow, backButtonHide } = this.state
@@ -132,7 +133,6 @@ class Home extends PureComponent {
           hidenBackInfo={this.hiddenBackInfo}
           toPageTop={this.toPageTop}
         />
-        } }
         <Heade />
         <MainContent
           downloadBigPhotoToggleShow={this.downloadBigPhotoToggleShow}

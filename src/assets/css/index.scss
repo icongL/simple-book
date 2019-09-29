@@ -12,14 +12,14 @@ body {
   font-family: 'iconfont';
   src: url(./../iconfont/iconfont.eot);
   src: url(./../iconfont/iconfont.eot?#iefix) format('embedded-opentype'),
-      url(./../iconfont/iconfont.woff2) format('woff2'),
-      url(./../iconfont/iconfont.woff) format('woff'),
-      url(./../iconfont/iconfont.ttf) format('truetype'),
-      url(./../iconfont/iconfont.svg#iconfont) format('svg');
+    url(./../iconfont/iconfont.woff2) format('woff2'),
+    url(./../iconfont/iconfont.woff) format('woff'),
+    url(./../iconfont/iconfont.ttf) format('truetype'),
+    url(./../iconfont/iconfont.svg#iconfont) format('svg');
 }
+
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -27,34 +27,36 @@ body {
 
 // commom Css
 .con-block {
-	display: block;
+  display: block;
 }
 
 .clearfix::after {
-	content: "";
-	display: block;
-	visibility: hidden;
-	width: 0px;
-	height: 0px;
-	clear: both;
+  content: "";
+  display: block;
+  visibility: hidden;
+  width: 0px;
+  height: 0px;
+  clear: both;
 }
 
 .f_l {
-	float: left;
+  float: left;
 }
 
 .f_r {
-	float: left;
+  float: left;
 }
+
 .f_r {
-	float: right !important;
+  float: right !important;
 }
+
 .n_f {
-	float: initial !important;
+  float: initial !important;
 }
 
 .kid_f_l {
-	> * {
-		float: left;
-	}
+  >* {
+    float: left;
+  }
 }

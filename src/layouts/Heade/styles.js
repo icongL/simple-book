@@ -1,21 +1,27 @@
 import styled from 'styled-components'
 
-export const HeadeWrapper = styled.div`
+export const HeadeWrapper = styled.div `
 	height: 56px;
 	position: relative;
 	text-align: center;
+	box-shadow: 0px 1px 2px -1px #ccc;
+	.heade-content {
+		width: 1440px;
+		margin: 0px auto;
+		
+	}
 `
-export const LogoContainer = styled.h1`
+export const LogoContainer = styled.h1 `
 	width: 120px;
 	padding: 0px 30px;
 	margin: 0px;
 	height: 100%;
 `
-export const LogoImg = styled.img`
+export const LogoImg = styled.img `
 	width: 100%;
 	height: 56px;
 `
-export const NavbarLeft = styled.div`
+export const NavbarLeft = styled.div `
 	z-index: 2;
 	height: 100%;
 	position: relative;

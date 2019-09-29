@@ -1,8 +1,4 @@
 import Styled from 'styled-components'
-export const ArticlesContainer =  Styled.ol`
-	padding-inline-start: 0px;
-	margin: 0px;
-`
 export const ContentRight = Styled.div `
   padding: 30px 0 0;
   margin-left: 20px;

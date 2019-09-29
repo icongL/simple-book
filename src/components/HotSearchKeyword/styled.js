@@ -1,6 +1,6 @@
 import Styled from 'styled-components'
 
-export const HotSearchContainer = Styled.div`
+export const HotSearchContainer = Styled.div `
 	width: 210px;
 	height: 189px;
 	background: #fff;
