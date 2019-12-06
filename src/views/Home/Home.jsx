@@ -122,7 +122,7 @@ class Home extends PureComponent {
       }
     })()
   }
-  render() {
+  render () {
     const { menus, downloadImgIsShow, backButtonHide } = this.state
     const { articles } = this.props
     return (

@@ -26,12 +26,13 @@ function getDetail(params) {
     res => {}
   )
 }
+// 返回指定格式的 HTML字符串
 function createMarkup(htmlString) {
   return {
     __html: htmlString.replace(/\s*/g, '')
   }
 }
-
+// 返回PureComponent
 export default class BookDetail extends PureComponent {
   constructor(props) {
     super(props)
